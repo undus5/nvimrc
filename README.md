@@ -25,6 +25,7 @@ I recommend using [IBM Plex Mono font](https://github.com/IBM/plex) (it's an ope
 
 Some other fonts that Awesome will try to use:
 
+* [Sarasa Mono SC](https://github.com/be5invis/Sarasa-Gothic)
 * [Hack](http://sourcefoundry.org/hack/)
 * [Source Code Pro](https://adobe-fonts.github.io/source-code-pro/)
 
@@ -58,10 +59,6 @@ Just do a git rebase!
 
 
 ## Some screenshots
-
-Colors when editing a Python file:
-
-![Screenshot 1](https://dnp4pehkvoo6n.cloudfront.net/07583008e4da885801657e8781777844/as/Python%20editing.png)
 
 [NERD Tree](https://github.com/scrooloose/nerdtree) plugin in a terminal window:
 ![Screenshot 3](https://dnp4pehkvoo6n.cloudfront.net/ae719203166585d64728f28398f4b1b7/as/Terminal%20usage.png)
