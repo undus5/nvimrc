@@ -73,6 +73,8 @@ map <leader>nf :NERDTreeFind<cr>
 let NERDTreeQuitOnOpen=1
 let NERDTreeKeepTreeInNewTab=1
 let NERDTreeShowHidden=1
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '~'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
