@@ -3,3 +3,4 @@ plugins/tlib/doc/tags
 plugins/ctrlp.vim/doc/tags*
 tags
 .DS_Store
+plugins_old
