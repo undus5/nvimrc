@@ -77,8 +77,11 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
-"Always show current position
+" Always show current position
 set ruler
+
+" Show line number
+set number
 
 " Height of the command bar
 set cmdheight=1
@@ -188,9 +191,12 @@ set tabstop=4
 set lbr
 set tw=500
 
-set ai "Auto indent
-set si "Smart indent
+set autoindent
+set smartindent
 set wrap "Wrap lines
+
+" Disable auto comment in new line
+set formatoptions-=ro
 
 
 """"""""""""""""""""""""""""""
@@ -210,10 +216,10 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <C-j> <C-W>+
+map <C-k> <C-W>-
+map <C-h> <C-W><
+map <C-l> <C-W>>
 
 map <S-H> gT
 map <S-L> gt
