@@ -195,9 +195,6 @@ set autoindent
 set smartindent
 set wrap "Wrap lines
 
-" Disable auto comment in new line
-set formatoptions-=ro
-
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
