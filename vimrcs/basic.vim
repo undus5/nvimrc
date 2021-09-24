@@ -36,6 +36,7 @@ set history=500
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+autocmd Filetype * setlocal formatoptions-=r formatoptions-=o
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -194,8 +195,6 @@ set tw=500
 set autoindent
 set smartindent
 set wrap "Wrap lines
-
-set formatoptions-=ro
 
 
 """"""""""""""""""""""""""""""
