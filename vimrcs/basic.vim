@@ -195,6 +195,8 @@ set autoindent
 set smartindent
 set wrap "Wrap lines
 
+set formatoptions-=ro
+
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
