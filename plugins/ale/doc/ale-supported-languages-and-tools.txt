@@ -151,6 +151,7 @@ Notes:
   * `elm-make`
 * Erb
   * `erb`
+  * `erblint`
   * `erubi`
   * `erubis`
   * `ruumba`
@@ -249,6 +250,7 @@ Notes:
   * `javalsp`
   * `uncrustify`
 * JavaScript
+  * `deno`
   * `eslint`
   * `fecs`
   * `flow`
@@ -271,6 +273,9 @@ Notes:
   * `eslint`
 * JSONC
   * `eslint`
+* Jsonnet
+  * `jsonnet-lint`
+  * `jsonnetfmt`
 * Julia
   * `languageserver`
 * Kotlin
@@ -415,6 +420,7 @@ Notes:
   * `bandit`
   * `black`
   * `flake8`
+  * `flakehell`
   * `isort`
   * `mypy`
   * `prospector`!!

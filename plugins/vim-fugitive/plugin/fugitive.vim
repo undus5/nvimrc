@@ -420,7 +420,7 @@ function! FugitiveDetect(...) abort
   if exists('b:git_dir') && b:git_dir =~# '^$\|' . s:bad_git_dir
     unlet b:git_dir
   endif
-  if a:0 > 1 && a:2 && !exists('#User#Fugitive')
+  if a:0 > 1 && a:2 is# 0 && !exists('#User#Fugitive')
     return ''
   endif
   if !exists('b:git_dir')
@@ -604,7 +604,7 @@ augroup fugitive
   autocmd!
 
   autocmd BufNewFile,BufReadPost *
-        \    call FugitiveDetect(expand('<amatch>:p'), 1)
+        \    call FugitiveDetect(expand('<amatch>:p'), 0)
   autocmd FileType           netrw call FugitiveDetect(fnamemodify(get(b:, 'netrw_curdir', expand('<afile>:p')), ':p'), 1)
 
   autocmd FileType git
@@ -660,15 +660,12 @@ endif
 
 let s:nowait = v:version >= 704 ? '<nowait>' : ''
 
-function! s:Map(mode, lhs, rhs, ...) abort
-  for mode in split(a:mode, '\zs')
-    let flags = (a:0 ? a:1 : '') . (a:rhs =~# '<Plug>' ? '' : '<script>')
-    let head = a:lhs
-    let tail = ''
-    let keys = get(g:, mode.'remap', {})
-    if type(keys) == type([])
-      return
-    endif
+function! s:Map(mode, lhs, rhs, flags) abort
+  let flags = a:flags . (a:rhs =~# '<Plug>' ? '' : '<script>')
+  let head = a:lhs
+  let tail = ''
+  let keys = get(g:, a:mode.'remap', {})
+  if len(keys) && type(keys) == type({})
     while !empty(head)
       if has_key(keys, head)
         let head = keys[head]
@@ -680,10 +677,10 @@ function! s:Map(mode, lhs, rhs, ...) abort
       let tail = matchstr(head, '<[^<>]*>$\|.$') . tail
       let head = substitute(head, '<[^<>]*>$\|.$', '', '')
     endwhile
-    if flags !~# '<unique>' || empty(mapcheck(head.tail, mode))
-      exe mode.'map' s:nowait flags head.tail a:rhs
-    endif
-  endfor
+  endif
+  if flags !~# '<unique>' || empty(mapcheck(head.tail, a:mode))
+    exe a:mode.'map' s:nowait flags head.tail a:rhs
+  endif
 endfunction
 
 call s:Map('c', '<C-R><C-G>', 'fnameescape(fugitive#Object(@%))', '<expr>')

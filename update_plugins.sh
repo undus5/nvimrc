@@ -4,28 +4,26 @@ script_dir=$(dirname $(realpath $0))
 
 cd $script_dir
 
+target="plugins"
 backup="plugins_old"
 
 if [ -d "$backup" ]
 then
-    echo "error: ${backup} exists, restore it first"
-    exit 1
+    rm -rf $target
+else
+    mv $target $backup
 fi
 
-target="plugins"
-
-mv $target $backup
 mkdir $target
-
 cd $target
 
-printf "downloading and unpacking:\n"
+printf "updating ...\n"
 while IFS= read line || [ -n "$line" ]; do
     line="$(echo -e "$line" | tr -d '[:space:]')"
     url="https://github.com/${line}/archive/master.zip"
     basename="$(echo $line | sed 's/^.*\///')"
     filename="${basename}-master.zip"
-    printf "\t%-32s ... " $line
+    printf "\t%-32s " $line
     curl -sSL "$url" -o "$filename"
     if [ $? -eq 0 ]
     then
@@ -34,7 +32,7 @@ while IFS= read line || [ -n "$line" ]; do
         then
             rm $filename
             mv "${basename}-master" $basename
-            printf "done\n"
+            printf "updated\n"
         else
             printf "failed\n"
             exit 1

@@ -160,6 +160,7 @@ formatting.
   * [elm-make](https://github.com/elm/compiler)
 * Erb
   * [erb](https://apidock.com/ruby/ERB)
+  * [erblint](https://github.com/Shopify/erb-lint)
   * [erubi](https://github.com/jeremyevans/erubi)
   * [erubis](https://github.com/kwatch/erubis)
   * [ruumba](https://github.com/ericqweinstein/ruumba)
@@ -258,6 +259,7 @@ formatting.
   * [javalsp](https://github.com/georgewfraser/vscode-javac)
   * [uncrustify](https://github.com/uncrustify/uncrustify)
 * JavaScript
+  * [deno](https://deno.land/)
   * [eslint](http://eslint.org/)
   * [fecs](http://fecs.baidu.com/)
   * [flow](https://flowtype.org/)
@@ -280,6 +282,9 @@ formatting.
   * [eslint](http://eslint.org/)
 * JSONC
   * [eslint](http://eslint.org/)
+* Jsonnet
+  * [jsonnet-lint](https://jsonnet.org/learning/tools.html)
+  * [jsonnetfmt](https://jsonnet.org/learning/tools.html)
 * Julia
   * [languageserver](https://github.com/JuliaEditorSupport/LanguageServer.jl)
 * Kotlin
@@ -424,6 +429,7 @@ formatting.
   * [bandit](https://github.com/PyCQA/bandit) :warning:
   * [black](https://github.com/ambv/black)
   * [flake8](http://flake8.pycqa.org/en/latest/)
+  * [flakehell](https://github.com/flakehell/flakehell)
   * [isort](https://github.com/timothycrosley/isort)
   * [mypy](http://mypy-lang.org/)
   * [prospector](https://github.com/PyCQA/prospector) :warning: :floppy_disk:
