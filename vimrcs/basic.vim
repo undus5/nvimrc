@@ -389,9 +389,3 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Clipboard
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap <C-W>y "+y
-nnoremap <C-W>p "+p
