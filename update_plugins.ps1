@@ -1,5 +1,8 @@
+$working_dir = Get-Location
+
 7z | Out-Null
 if (!$?) {
+    Set-Location $working_dir
     Exit
 }
 
@@ -34,12 +37,15 @@ foreach($line in Get-Content $script_dir\$target.txt) {
             "{0, -32}`t {1}" -f $line, "updated"
         } else {
             "{0, -32}`t {1}" -f $line, "failed"
+            Set-Location $working_dir
             Exit
         }
     } else {
         "{0, -32}`t {1}" -f $line, "failed"
+        Set-Location $working_dir
         Exit
     }
 }
 
 Remove-Item -Recurse $script_dir\$backup
+Set-Location $working_dir
