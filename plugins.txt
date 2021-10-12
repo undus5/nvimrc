@@ -30,3 +30,4 @@ posva/vim-vue
 chemzqm/wxapp.vim
 michaeljsmith/vim-indent-object
 inkarkat/vim-ReplaceWithRegister
+PProvost/vim-ps1
