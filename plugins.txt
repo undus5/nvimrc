@@ -28,3 +28,5 @@ tpope/vim-endwise
 tmhedberg/matchit
 posva/vim-vue
 chemzqm/wxapp.vim
+michaeljsmith/vim-indent-object
+inkarkat/vim-ReplaceWithRegister

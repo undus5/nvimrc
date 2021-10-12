@@ -1,8 +1,8 @@
 #!/bin/bash
 
-project_root=$(dirname $(realpath $0))
+script_dir=$(dirname $(realpath $0))
 
-cd $project_root
+cd $script_dir
 
 backup="plugins_old"
 
@@ -12,10 +12,12 @@ then
     exit 1
 fi
 
-mv plugins $backup
-mkdir plugins
+target="plugins"
 
-cd plugins
+mv $target $backup
+mkdir $target
+
+cd $target
 
 printf "downloading and unpacking:\n"
 while IFS= read line || [ -n "$line" ]; do
@@ -23,7 +25,7 @@ while IFS= read line || [ -n "$line" ]; do
     url="https://github.com/${line}/archive/master.zip"
     basename="$(echo $line | sed 's/^.*\///')"
     filename="${basename}-master.zip"
-    printf "\t%-32s ..." $line
+    printf "\t%-32s ... " $line
     curl -sSL "$url" -o "$filename"
     if [ $? -eq 0 ]
     then
@@ -32,15 +34,15 @@ while IFS= read line || [ -n "$line" ]; do
         then
             rm $filename
             mv "${basename}-master" $basename
-            printf "\tdone\n"
+            printf "done\n"
         else
-            printf "\tfailed\n"
+            printf "failed\n"
             exit 1
         fi
     else
-        printf "\tfailed\n"
+        printf "failed\n"
         exit 1
     fi
-done < $project_root/plugins.txt
+done < $script_dir/$target.txt
 
-rm -rf $project_root/$backup
+rm -rf $script_dir/$backup

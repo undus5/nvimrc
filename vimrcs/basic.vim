@@ -393,5 +393,5 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Clipboard
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap <leader>y "+y
-nnoremap <leader>p "+p
+vnoremap <C-W>y "+y
+nnoremap <C-W>p "+p
