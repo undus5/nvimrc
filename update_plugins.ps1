@@ -34,14 +34,14 @@ foreach($line in Get-Content $script_dir\$target.txt) {
         if ($?) {
             Remove-Item $filename
             Move-Item "${basename}-master" $basename
-            "{0, -32}`t {1}" -f $line, "updated"
+            "{0, -32}`t {1}" -f $line, "success"
         } else {
-            "{0, -32}`t {1}" -f $line, "failed"
+            "{0, -32}`t {1}" -f $line, "fail"
             Set-Location $working_dir
             Exit
         }
     } else {
-        "{0, -32}`t {1}" -f $line, "failed"
+        "{0, -32}`t {1}" -f $line, "fail"
         Set-Location $working_dir
         Exit
     }
