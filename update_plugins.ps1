@@ -1,11 +1,5 @@
 $working_dir = Get-Location
 
-7z | Out-Null
-if (!$?) {
-    Set-Location $working_dir
-    Exit
-}
-
 $script_dir = $MyInvocation.MyCommand.Path | Split-Path -Parent
 
 Set-Location $script_dir
@@ -30,7 +24,7 @@ foreach($line in Get-Content $script_dir\$target.txt) {
     $filename="${basename}-master.zip"
     curl -sSL $url -o $filename
     if ($?) {
-        7z x $filename | Out-Null
+        Expand-Archive -Path $filename -DestinationPath .
         if ($?) {
             Remove-Item $filename
             Move-Item "${basename}-master" $basename
