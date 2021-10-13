@@ -36,12 +36,12 @@ foreach($line in Get-Content $script_dir\$target.txt) {
             Move-Item "${basename}-master" $basename
             "{0, -32}`t {1}" -f $line, "success"
         } else {
-            "{0, -32}`t {1}" -f $line, "fail"
+            "{0, -32}`t {1}" -f $line, "error"
             Set-Location $working_dir
             Exit
         }
     } else {
-        "{0, -32}`t {1}" -f $line, "fail"
+        "{0, -32}`t {1}" -f $line, "error"
         Set-Location $working_dir
         Exit
     }

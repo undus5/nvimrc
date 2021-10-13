@@ -32,13 +32,13 @@ while IFS= read line || [ -n "$line" ]; do
         then
             rm $filename
             mv "${basename}-master" $basename
-            printf "updated\n"
+            printf "success\n"
         else
-            printf "failed\n"
+            printf "error\n"
             exit 1
         fi
     else
-        printf "failed\n"
+        printf "error\n"
         exit 1
     fi
 done < $script_dir/$target.txt
