@@ -1,45 +1,35 @@
-$working_dir = Get-Location
-
 $script_dir = $MyInvocation.MyCommand.Path | Split-Path -Parent
+$update_dir = "${$script_dir}\update"
 
-Set-Location $script_dir
-
-$target = "plugins"
-$backup = "plugins_old"
-
-if ( Test-Path $backup ) {
-    Remove-Item -Recurse $target
-} else {
-    Move-Item $target $backup
+if ( Test-Path $update_dir ) {
+    Remove-Item -Recurse $update_dir
 }
 
-New-Item -Path $target -ItemType Directory | Out-Null
-Set-Location $target
+New-Item -Path $update_dir -ItemType Directory | Out-Null
 
-Write-Output "updating ..."
-foreach($line in Get-Content $script_dir\$target.txt) {
+Write-Output "downloading and unpacking plugins ..."
+foreach($line in Get-Content "$script_dir\plugins.txt") {
     $line = $line.Trim()
     $url = "https://github.com/${line}/archive/master.zip"
     $basename = $line -replace '^.*\/', ''
-    $filename="${basename}-master.zip"
-    curl -sSL $url -o $filename
+    $archive_path="${basename}-master.zip"
+    curl -sSL $url -o $archive_path
     if ($?) {
-        Expand-Archive -Path $filename -DestinationPath .
+        Expand-Archive -Path $archive_path -DestinationPath $update_dir
         if ($?) {
-            Remove-Item $filename
-            Move-Item "${basename}-master" $basename
+            Remove-Item $archive_path
+            Move-Item "${update_dir}\${basename}-master" ${update_dir}\${basename}
             "{0, -32}`t {1}" -f $line, "success"
         } else {
             "{0, -32}`t {1}" -f $line, "error"
-            Set-Location $working_dir
             Exit
         }
     } else {
         "{0, -32}`t {1}" -f $line, "error"
-        Set-Location $working_dir
         Exit
     }
 }
 
-Remove-Item -Recurse $script_dir\$backup
-Set-Location $working_dir
+Write-Output "updating plugins ..."
+Move-Item $update_dir "${script_dir}\plugins"
+Write-Output "success"
