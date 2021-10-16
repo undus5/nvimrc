@@ -24,6 +24,6 @@ New-Item -ItemType file ~\.gvimrc
 for Neovim, The config file is located at:
 
 ```
-Unix			~/.config/nvim/init.vim		(or init.lua)
-Windows			~/AppData/Local/nvim/init.vim	(or init.lua)
+Unix ~/.config/nvim/init.vim
+Windows	~/AppData/Local/nvim/init.vim
 ```
