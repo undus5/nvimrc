@@ -7,7 +7,7 @@ if ( Test-Path $update_dir ) {
 
 New-Item -Path $update_dir -ItemType Directory | Out-Null
 
-Write-Output "downloading and unpacking plugins ..."
+Write-Host "downloading and unpacking plugins ..."
 foreach($line in Get-Content "$script_dir\plugins.txt") {
     $line = $line.Trim()
     $url = "https://github.com/${line}/archive/master.zip"
@@ -30,6 +30,6 @@ foreach($line in Get-Content "$script_dir\plugins.txt") {
     }
 }
 
-Write-Output "updating plugins ..."
+Write-Host "updating plugins ..." -NoNewline
 Move-Item $update_dir "${script_dir}\plugins"
-Write-Output "success"
+Write-Host " success"
