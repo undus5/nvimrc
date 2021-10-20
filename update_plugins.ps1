@@ -4,7 +4,6 @@ $update_dir = "${$script_dir}\update"
 if ( Test-Path $update_dir ) {
     Remove-Item -Recurse $update_dir
 }
-
 New-Item -Path $update_dir -ItemType Directory | Out-Null
 
 Write-Host "downloading and unpacking plugins ..."
@@ -30,6 +29,6 @@ foreach($line in Get-Content "$script_dir\plugins.txt") {
     }
 }
 
-Write-Host "updating plugins ..." -NoNewline
+Write-Host "updating plugins ... " -NoNewline
 Move-Item $update_dir "${script_dir}\plugins"
-Write-Host " success"
+Write-Host "success"
