@@ -12,7 +12,7 @@
 if has("mac") || has("macunix")
     set gfn=Menlo:h15
 elseif has("win16") || has("win32")
-    set gfn=DejaVu\ Sans\ Mono:h12
+    set gfn=Cascadia\ Code:h12,DejaVu\ Sans\ Mono:h12
 elseif has("gui_gtk2")
     set gfn=DejaVu\ Sans\ Mono\ 12
 elseif has("linux")
