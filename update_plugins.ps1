@@ -9,7 +9,8 @@ New-Item -Path $update_dir -ItemType Directory | Out-Null
 Write-Host "downloading and unpacking plugins ..."
 foreach($line in Get-Content "$script_dir\plugins.txt") {
     $line = $line.Trim()
-    $url = "https://github.com/${line}/archive/master.zip"
+    # $url = "https://github.com/${line}/archive/master.zip"
+    $url = "https://download.fastgit.org/${line}/archive/master.zip"
     $basename = $line -replace '^.*\/', ''
     $archive_path="${basename}-master.zip"
     curl -sSL $url -o $archive_path

@@ -53,7 +53,8 @@ mkdir $update_dir
 printf "downloading and unpacking plugins ...\n"
 while IFS= read line || [ -n "$line" ]; do
     line=$(strip_all "$line" "[[:space:]]")
-    url="https://github.com/${line}/archive/master.zip"
+    # url="https://github.com/${line}/archive/master.zip"
+    url="https://download.fastgit.org/${line}/archive/master.zip"
     basename=$(lstrip "$line" "*/")
     archive_path="${basename}-master.zip"
     printf "\t%-32s " $line
