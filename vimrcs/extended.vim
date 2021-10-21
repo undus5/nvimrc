@@ -10,16 +10,25 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set font according to system
 if has("mac") || has("macunix")
-    set gfn=Menlo:h15
+    set gfn=Menlo:h15,JetBrains\ Mono:h12
 elseif has("win16") || has("win32")
-    set gfn=Cascadia\ Code:h12,DejaVu\ Sans\ Mono:h12
+    set gfn=JetBrains\ Mono:h12,Cascadia\ Code:h12
 elseif has("gui_gtk2")
-    set gfn=DejaVu\ Sans\ Mono\ 12
+    set gfn=JetBrains\ Mono\ 12
 elseif has("linux")
-    set gfn=DejaVu\ Sans\ Mono\ 12
+    set gfn=JetBrains\ Mono\ 12
 elseif has("unix")
     set gfn=Monospace\ 11
 endif
+
+" Bitstream Vera Sans Mono
+" Cascadia Code
+" DejaVu Sans Mono
+" Fira Code
+" IBM Plex Mono
+" Inconsolata
+" JetBrains Mono
+" Source Code Pro
 
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
 set guioptions-=r
