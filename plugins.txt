@@ -14,7 +14,6 @@ airblade/vim-gitgutter
 itchyny/lightline.vim
 maximbaz/lightline-ale
 vim-ruby/vim-ruby
-pangloss/vim-javascript
 mattn/emmet-vim
 danro/rename.vim
 tpope/vim-endwise
