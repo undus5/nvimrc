@@ -13,6 +13,7 @@ if has("mac") || has("macunix")
     set gfn=Menlo:h15,JetBrains\ Mono:h12
 elseif has("win16") || has("win32")
     set gfn=JetBrains\ Mono:h12,Cascadia\ Code:h12
+    set gfw=Sarasa\ Mono\ SC:h14
 elseif has("gui_gtk2")
     set gfn=JetBrains\ Mono\ 12
 elseif has("linux")
