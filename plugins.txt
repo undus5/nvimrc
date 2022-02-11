@@ -22,3 +22,4 @@ michaeljsmith/vim-indent-object
 inkarkat/vim-ReplaceWithRegister
 PProvost/vim-ps1
 altercation/vim-colors-solarized
+https://github.com/leafOfTree/vim-vue-plugin
