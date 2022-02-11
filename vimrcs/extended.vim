@@ -147,9 +147,3 @@ func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Clipboard
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap <C-W>y "+y
-nnoremap <C-W>p "+p
-nnoremap <C-W>P "+P
