@@ -4,3 +4,4 @@ plugins/ctrlp.vim/doc/tags*
 tags
 .DS_Store
 update
+temp_dirs/undodir/*
