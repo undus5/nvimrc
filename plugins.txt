@@ -9,7 +9,7 @@ tpope/vim-surround
 terryma/vim-expand-region
 terryma/vim-multiple-cursors
 tpope/vim-fugitive
-tpope/vim-commentary
+tomtom/tcomment_vim
 airblade/vim-gitgutter
 itchyny/lightline.vim
 maximbaz/lightline-ale
