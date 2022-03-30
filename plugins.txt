@@ -13,11 +13,8 @@ tomtom/tcomment_vim
 airblade/vim-gitgutter
 itchyny/lightline.vim
 maximbaz/lightline-ale
-vim-ruby/vim-ruby
 mattn/emmet-vim
-danro/rename.vim
-tpope/vim-endwise
-tmhedberg/matchit
+nathanaelkane/vim-indent-guides
 michaeljsmith/vim-indent-object
 inkarkat/vim-ReplaceWithRegister
 PProvost/vim-ps1
