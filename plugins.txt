@@ -16,4 +16,6 @@ mattn/emmet-vim
 michaeljsmith/vim-indent-object
 inkarkat/vim-ReplaceWithRegister
 PProvost/vim-ps1
-https://github.com/leafOfTree/vim-vue-plugin
+leafOfTree/vim-vue-plugin
+godlygeek/tabular
+preservim/vim-markdown

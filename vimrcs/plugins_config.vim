@@ -13,6 +13,8 @@ call pathogen#infect(s:vim_runtime.'/plugins_local/{}')
 call pathogen#infect(s:vim_runtime.'/plugins/{}')
 call pathogen#helptags()
 
+colorscheme solarized
+
 
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
