@@ -1,0 +1,3 @@
+altercation/vim-colors-solarized
+nathanaelkane/vim-indent-guides
+terryma/vim-expand-region
