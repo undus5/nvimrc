@@ -13,9 +13,9 @@ call pathogen#infect(s:vim_runtime.'/plugins_local/{}')
 call pathogen#infect(s:vim_runtime.'/plugins/{}')
 call pathogen#helptags()
 
-if has('gui_running')
-    colorscheme solarized
-endif
+set termguicolors
+set background=light
+colorscheme NeoSolarized
 
 
 """"""""""""""""""""""""""""""

@@ -9,17 +9,11 @@
 " => GUI related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set font according to system
-if has("mac") || has("macunix")
-    set gfn=Menlo:h15,JetBrains\ Mono:h12
-elseif has("win16") || has("win32")
+if has("win32")
     set gfn=JetBrains\ Mono:h12,Cascadia\ Code:h12
     set gfw=Sarasa\ Mono\ SC:h14
-elseif has("gui_gtk2")
-    set gfn=JetBrains\ Mono\ 12
 elseif has("linux")
     set gfn=JetBrains\ Mono\ 12
-elseif has("unix")
-    set gfn=Monospace\ 11
 endif
 
 " Bitstream Vera Sans Mono
@@ -36,13 +30,6 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-
-" Colorscheme
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

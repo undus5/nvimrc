@@ -1,11 +1,9 @@
-jiangmiao/auto-pairs
 w0rp/ale
 mileszs/ack.vim
 jlanzarotta/bufexplorer
 ctrlpvim/ctrlp.vim
 scrooloose/nerdtree
 chr4/nginx.vim
-tpope/vim-surround
 terryma/vim-multiple-cursors
 tpope/vim-fugitive
 tomtom/tcomment_vim

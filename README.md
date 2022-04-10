@@ -2,28 +2,15 @@
 
 ## Installation
 
-for Linux
-
 ```
 git clone https://github.com/dodowhat/vimrc.git ~/.vim_runtime
+cd ~/.vim_runtime
 
-ln -s ~/.vim_runtime/vimrc ~/.vimrc
+# Linux
+./install.sh
+
+# Windows (PowerShell)
+
+./install.ps1
 ```
 
-for Windows (PowerShell)
-
-```
-git clone https://github.com/dodowhat/vimrc.git ~/.vim_runtime
-
-Copy-Item "~\.vim_runtime\vimrc" -Destination "~\.vimrc"
-
-# If Vim version >= 8.2
-New-Item -ItemType file ~\.gvimrc
-```
-
-for Neovim, The config file is located at:
-
-```
-Unix ~/.config/nvim/init.vim
-Windows	~/AppData/Local/nvim/init.vim
-```
