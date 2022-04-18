@@ -10,10 +10,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set font according to system
 if has("win32")
-    set gfn=JetBrains\ Mono:h12,Cascadia\ Code:h12
+    set gfn=JetBrains\ Mono\ NL:h12,Cascadia\ Code:h12
     set gfw=Sarasa\ Mono\ SC:h14
 elseif has("linux")
-    set gfn=JetBrains\ Mono\ 12
+    set gfn=JetBrains\ Mono\ NL\ 12
 endif
 
 " Bitstream Vera Sans Mono
