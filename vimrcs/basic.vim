@@ -199,7 +199,7 @@ set tw=500
 
 set autoindent
 set smartindent
-set wrap "Wrap lines
+set nowrap
 
 
 """"""""""""""""""""""""""""""
