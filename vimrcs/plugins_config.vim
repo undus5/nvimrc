@@ -14,7 +14,7 @@ call pathogen#infect(s:vim_runtime.'/plugins/{}')
 call pathogen#helptags()
 
 set termguicolors
-set background=light
+" set background=light
 autocmd vimenter * ++nested colorscheme solarized8
 
 

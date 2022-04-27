@@ -4,7 +4,9 @@ $vimrc_destination = "~\_vimrc"
 $gvimrc_destination = "~\_gvimrc"
 
 Copy-Item $vimrc_source -Destination $vimrc_destination
-New-Item -ItemType file $gvimrc_destination
+if ( !(Test-Path $gvimrc_destination) ) {
+    New-Item -ItemType file $gvimrc_destination
+}
 
 $nvim_config_dir = "~\AppData\Local\nvim"
 
