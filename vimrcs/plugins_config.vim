@@ -15,7 +15,7 @@ call pathogen#helptags()
 
 set termguicolors
 " set background=light
-autocmd vimenter * ++nested colorscheme solarized8
+colorscheme solarized8
 
 
 """"""""""""""""""""""""""""""
