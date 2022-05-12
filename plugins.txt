@@ -1,4 +1,4 @@
-w0rp/ale
+dense-analysis/ale
 mileszs/ack.vim
 jlanzarotta/bufexplorer
 ctrlpvim/ctrlp.vim

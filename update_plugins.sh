@@ -42,7 +42,8 @@ lstrip() {
 test_command unzip
 
 script_dir=$(dirname $(realpath $0))
-update_dir="${script_dir}/update"
+update_dir=${script_dir}/update
+plugin_dir=${script_dir}/plugins
 
 if [[ -d $update_dir ]]
 then
@@ -54,16 +55,16 @@ printf "downloading and unpacking plugins ...\n"
 while IFS= read line || [ -n "$line" ]; do
     line=$(strip_all "$line" "[[:space:]]")
     # url="https://github.com/${line}/archive/master.zip"
-    url="https://download.fastgit.org/${line}/archive/master.zip"
+    url="https://ghproxy.com/https://github.com/${line}/archive/master.zip"
     basename=$(lstrip "$line" "*/")
-    archive_path="${basename}-master.zip"
+    archive_path=${update_dir}/${basename}-master.zip
     printf "\t%-32s " $line
-    curl -#SL $url -o $archive_path
+    curl -sSL $url -o $archive_path
     if [[ $? ]]; then
         unzip -q -d $update_dir $archive_path
         if [[ $? ]]; then
             rm $archive_path
-            mv "${update_dir}/${basename}-master" ${update_dir}/${basename}
+            mv ${update_dir}/${basename}-master ${update_dir}/${basename}
             printf "success\n"
         else
             printf "error\n"
@@ -76,5 +77,6 @@ while IFS= read line || [ -n "$line" ]; do
 done < $script_dir/plugins.txt
 
 printf "updating plugins ... "
-mv $update_dir ${script_dir}/plugins
+rm -rf $plugin_dir
+mv $update_dir $plugin_dir
 printf "success\n"

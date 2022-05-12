@@ -45,6 +45,9 @@ let s:default_ale_linters = {
 \   'hack': ['hack'],
 \   'help': [],
 \   'inko': ['inko'],
+\   'json': ['jsonlint', 'spectral', 'vscodejson'],
+\   'json5': [],
+\   'jsonc': [],
 \   'perl': ['perlcritic'],
 \   'perl6': [],
 \   'python': ['flake8', 'mypy', 'pylint', 'pyright'],
@@ -54,6 +57,7 @@ let s:default_ale_linters = {
 \   'vue': ['eslint', 'vls'],
 \   'zsh': ['shell'],
 \   'v': ['v'],
+\   'yaml': ['spectral', 'yaml-language-server', 'yamllint'],
 \}
 
 " Testing/debugging helper to unload all linters.
