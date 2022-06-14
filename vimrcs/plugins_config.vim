@@ -13,10 +13,6 @@ call pathogen#infect(s:vim_runtime.'/plugins_local/{}')
 call pathogen#infect(s:vim_runtime.'/plugins/{}')
 call pathogen#helptags()
 
-set termguicolors
-" set background=light
-colorscheme solarized8
-
 
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
@@ -100,11 +96,20 @@ vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 
+""""""""""""""""""""""""""""""
+" => Colorscheme
+""""""""""""""""""""""""""""""
+
+set termguicolors
+set background=light
+colorscheme PaperColor
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'PaperColor',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
       \             ['fugitive', 'readonly', 'filename', 'modified'] ],

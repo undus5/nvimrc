@@ -17,4 +17,4 @@ PProvost/vim-ps1
 leafOfTree/vim-vue-plugin
 godlygeek/tabular
 preservim/vim-markdown
-lifepillar/vim-solarized8
+NLKNguyen/papercolor-theme
