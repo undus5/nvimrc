@@ -60,9 +60,9 @@ while IFS= read line || [ -n "$line" ]; do
     archive_path=${update_dir}/${basename}-master.zip
     printf "\t%-32s " $line
     curl -sSL $url -o $archive_path
-    if [[ $? ]]; then
+    if [[ $? == 0 ]]; then
         unzip -q -d $update_dir $archive_path
-        if [[ $? ]]; then
+        if [[ $? == 0 ]]; then
             rm $archive_path
             mv ${update_dir}/${basename}-master ${update_dir}/${basename}
             printf "success\n"
