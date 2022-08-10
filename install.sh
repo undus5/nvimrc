@@ -14,20 +14,20 @@ touch $gvimrc_destination
 
 # Neovim
 
-nvim_config_dir=~/.config/nvim
-
-if [[ ! -d $nvim_config_dir ]]; then
-    mkdir -p $nvim_config_dir
-fi
-
-nvimrc_destination=$nvim_config_dir/init.vim
-gnvimrc_source=$runtime_path/ginit.vim
-gnvimrc_destination=$nvim_config_dir/ginit.vim
-
-if [[ ! -f $nvimrc_destination ]]; then
-    ln -s $vimrc_source $nvimrc_destination
-fi
-if [[ ! -f $gnvimrc_destination ]]; then
-    ln -s $gnvimrc_source $gnvimrc_destination
-fi
+# nvim_config_dir=~/.config/nvim
+#
+# if [[ ! -d $nvim_config_dir ]]; then
+#     mkdir -p $nvim_config_dir
+# fi
+#
+# nvimrc_destination=$nvim_config_dir/init.vim
+# gnvimrc_source=$runtime_path/ginit.vim
+# gnvimrc_destination=$nvim_config_dir/ginit.vim
+#
+# if [[ ! -f $nvimrc_destination ]]; then
+#     ln -s $vimrc_source $nvimrc_destination
+# fi
+# if [[ ! -f $gnvimrc_destination ]]; then
+#     ln -s $gnvimrc_source $gnvimrc_destination
+# fi
 
