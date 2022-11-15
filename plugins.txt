@@ -18,3 +18,4 @@ leafOfTree/vim-vue-plugin
 godlygeek/tabular
 preservim/vim-markdown
 NLKNguyen/papercolor-theme
+chrisbra/matchit
