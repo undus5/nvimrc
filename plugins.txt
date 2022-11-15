@@ -6,6 +6,7 @@ scrooloose/nerdtree
 chr4/nginx.vim
 terryma/vim-multiple-cursors
 tpope/vim-fugitive
+tpope/vim-surround
 tomtom/tcomment_vim
 airblade/vim-gitgutter
 itchyny/lightline.vim
