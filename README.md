@@ -1,16 +1,12 @@
 # vimrc
 
-## Installation
+## Config Location
 
-```
-git clone https://github.com/dodowhat/vimrc.git ~/.vim_runtime
-cd ~/.vim_runtime
+NeoVim
+Linux `~/.config/nvim/init.vim`
+Windows `~/AppData/Local/nvim/init.vim`
 
-# Linux
-./install.sh
-
-# Windows (PowerShell)
-
-./install.ps1
-```
+Vim
+Linux `~/.vimrc`
+Windows `~/_vimrc`
 
