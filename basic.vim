@@ -13,6 +13,7 @@ au FocusGained,BufEnter * checktime
 
 map <space> <leader>
 
+nmap <leader>w :w<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
