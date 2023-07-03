@@ -45,38 +45,59 @@ script_dir=$(dirname $(realpath $0))
 update_dir=${script_dir}/update
 plugin_dir=${script_dir}/plugins
 
-if [[ -d $update_dir ]]
-then
-    rm -rf $update_dir
-fi
+clear_cache() {
+    if [[ -d $update_dir ]]
+    then
+        rm -rf $update_dir
+    fi
+}
+
+clear_cache
 mkdir $update_dir
 
 printf "downloading and unpacking plugins ...\n"
+total=0
+count=0
 while IFS= read line || [ -n "$line" ]; do
     line=$(strip_all "$line" "[[:space:]]")
-    # url="https://github.com/${line}/archive/master.zip"
-    url="https://ghproxy.com/https://github.com/${line}/archive/master.zip"
+    if [[ -z $line ]]; then
+        continue
+    fi
+    total=$total+1
+    url="https://github.com/${line}/archive/master.zip"
+    # url="https://ghproxy.com/https://github.com/${line}/archive/master.zip"
     basename=$(lstrip "$line" "*/")
-    archive_path=${update_dir}/${basename}-master.zip
-    printf "\t%-32s " $line
+    archive_path=${update_dir}/${basename}.zip
+    printf "%-32s " $line
     curl -sSL $url -o $archive_path
     if [[ $? == 0 ]]; then
         unzip -q -d $update_dir $archive_path
         if [[ $? == 0 ]]; then
             rm $archive_path
-            mv ${update_dir}/${basename}-master ${update_dir}/${basename}
+            count=$count+1
             printf "success\n"
         else
             printf "error\n"
+            clear_cache
             exit 1
         fi
     else
         printf "error\n"
+        clear_cache
         exit 1
     fi
 done < $script_dir/plugins.txt
 
-printf "updating plugins ... "
-rm -rf $plugin_dir
-mv $update_dir $plugin_dir
-printf "success\n"
+if [[ $count == $total ]]; then
+    printf "updating plugins ... "
+    mv $plugin_dir ${plugin_dir}_old
+    mv $update_dir $plugin_dir
+    if [[ $? == 0 ]]; then
+        rm -rf ${plugin_dir}_old
+        printf "success\n"
+    else
+        printf "error\n"
+    fi
+fi
+
+clear_cache
