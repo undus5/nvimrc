@@ -424,7 +424,7 @@ function! VisualSelection(direction, extra_filter) range
     if a:direction == 'gv'
         call CmdLine("Ack '" . l:pattern . "' " )
     elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '\C/')
+        call CmdLine("%s" . '#'. l:pattern . '\C#')
     endif
 
     let @/ = l:pattern
