@@ -15,6 +15,9 @@ map <space> <leader>
 
 nmap <leader>w :w<cr>
 
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -262,13 +265,6 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fast editing and reloading of vimrc configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>e :e! ~/.vim_runtime/vimrc<cr>
-autocmd! bufwritepost ~/.vim_runtime/vimrc source ~/.vim_runtime/vimrc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

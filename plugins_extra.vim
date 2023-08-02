@@ -1,16 +1,8 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important:
-"       This requires that you install https://github.com/amix/vimrc !
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
 """"""""""""""""""""""""""""""
 " => Load pathogen paths
 """"""""""""""""""""""""""""""
 let s:vim_runtime = expand('<sfile>:p:h')."/"
-call pathogen#infect(s:vim_runtime.'/plugins_local/{}')
-call pathogen#infect(s:vim_runtime.'/plugins/{}')
+call pathogen#infect(s:vim_runtime.'/plugins_extra/{}')
 call pathogen#helptags()
 
 
@@ -28,23 +20,9 @@ map <leader>o :BufExplorer<cr>
 " => CTRL-P
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
-
-" Quickly find and open a buffer
-map <leader>b :CtrlPBuffer<cr>
-
-" Quickly find and open a recently opened file
-map <leader>f :CtrlPMRU<CR>
-
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|\.DS_Store\|\.git'
-
 let g:ctrlp_show_hidden = 1
-
-""""""""""""""""""""""""""""""
-" => Vim grep
-""""""""""""""""""""""""""""""
-let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
-set grepprg=/bin/grep\ -nH
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -53,8 +31,8 @@ set grepprg=/bin/grep\ -nH
 let g:NERDTreeWinPos = "right"
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nf :NERDTreeFind<cr>
+map <leader>e :NERDTreeToggle<cr>
+map <leader>f :NERDTreeFind<cr>
 let NERDTreeQuitOnOpen=1
 let NERDTreeKeepTreeInNewTab=1
 let NERDTreeShowHidden=1

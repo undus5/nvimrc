@@ -1,5 +1,7 @@
 # vimrc
 
+Ispired by https://github.com/amix/vimrc
+
 ## Config Location
 
 NeoVim

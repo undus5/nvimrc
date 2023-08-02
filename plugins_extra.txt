@@ -1,4 +1,3 @@
-
 dense-analysis/ale
 mileszs/ack.vim
 jlanzarotta/bufexplorer
@@ -7,17 +6,12 @@ scrooloose/nerdtree
 chr4/nginx.vim
 terryma/vim-multiple-cursors
 tpope/vim-fugitive
-tpope/vim-surround
-tomtom/tcomment_vim
 airblade/vim-gitgutter
 itchyny/lightline.vim
 maximbaz/lightline-ale
 mattn/emmet-vim
-michaeljsmith/vim-indent-object
-inkarkat/vim-ReplaceWithRegister
 PProvost/vim-ps1
 leafOfTree/vim-vue-plugin
-godlygeek/tabular
 preservim/vim-markdown
 NLKNguyen/papercolor-theme
 chrisbra/matchit

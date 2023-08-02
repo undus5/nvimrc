@@ -36,6 +36,5 @@ Plug 'tpope/vim-commentary'
 Plug 'michaeljsmith/vim-indent-object'
 packadd matchit
 
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nf :NERDTreeFind<cr>
-map <leader>nc :NERDTreeFocus<cr>
+map <leader>b :NERDTreeToggle<cr>
+map <leader>f :NERDTreeFind<cr>

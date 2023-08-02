@@ -1,3 +1,5 @@
+# Deprecated
+
 $script_dir = $MyInvocation.MyCommand.Path | Split-Path -Parent
 $update_dir = "${$script_dir}\update"
 $plugin_dir = "${$script_dir}\plugins"

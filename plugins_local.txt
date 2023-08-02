@@ -1,2 +1,0 @@
-nathanaelkane/vim-indent-guides
-terryma/vim-expand-region
