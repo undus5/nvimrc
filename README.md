@@ -1,5 +1,7 @@
 # vimrc
 
+Compatible with [VSCode Neovim](https://github.com/vscode-neovim/vscode-neovim)
+
 Ispired by https://github.com/amix/vimrc
 
 ## Config Location
@@ -11,4 +13,3 @@ Windows `~/AppData/Local/nvim/init.vim`
 Vim
 Linux `~/.vimrc`
 Windows `~/_vimrc`
-
