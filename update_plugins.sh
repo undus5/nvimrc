@@ -42,62 +42,73 @@ lstrip() {
 test_command unzip
 
 script_dir=$(dirname $(realpath $0))
-update_dir=${script_dir}/update
-plugin_dir=${script_dir}/plugins
+update_dir=${script_dir}/updates
 
-clear_cache() {
+clear_updates() {
     if [[ -d $update_dir ]]
     then
         rm -rf $update_dir
     fi
 }
 
-clear_cache
-mkdir $update_dir
+upgrade_plugins() {
+    case $1 in
+        "basic" | "extra")
+        ;;
+        *)
+            echo "wrong arguments"
+            exit 1
+        ;;
+    esac
 
-printf "downloading and unpacking plugins ...\n"
-total=0
-count=0
-while IFS= read line || [ -n "$line" ]; do
-    line=$(strip_all "$line" "[[:space:]]")
-    if [[ -z $line ]]; then
-        continue
-    fi
-    total=$total+1
-    url="https://github.com/${line}/archive/master.zip"
-    # url="https://ghproxy.com/https://github.com/${line}/archive/master.zip"
-    basename=$(lstrip "$line" "*/")
-    archive_path=${update_dir}/${basename}.zip
-    printf "%-32s " $line
-    curl -sSL $url -o $archive_path
-    if [[ $? == 0 ]]; then
-        unzip -q -d $update_dir $archive_path
+    clear_updates
+    mkdir $update_dir
+
+    plugin_list=plugins_${1}.txt
+    plugin_dir=${script_dir}/plugins_${1}
+
+    printf "downloading and unpacking plugins ...\n"
+    total=0
+    count=0
+    while IFS= read line || [ -n "$line" ]; do
+        line=$(strip_all "$line" "[[:space:]]")
+        if [[ -z $line ]]; then
+            continue
+        fi
+        total=$total+1
+        url="https://github.com/${line}/archive/master.zip"
+        basename=$(lstrip "$line" "*/")
+        archive_path=${update_dir}/${basename}.zip
+        printf "%-32s " $line
+        curl -sSL $url -o $archive_path
         if [[ $? == 0 ]]; then
-            rm $archive_path
-            count=$count+1
+            unzip -q -d $update_dir $archive_path
+            if [[ $? == 0 ]]; then
+                rm $archive_path
+                count=$count+1
+                printf "success\n"
+            else
+                printf "error\n"
+                exit 1
+            fi
+        else
+            printf "error\n"
+            exit 1
+        fi
+    done < $plugin_list
+
+    if [[ $count == $total ]]; then
+        printf "updating ${1} plugins ... "
+        mv $plugin_dir ${plugin_dir}_old
+        mv $update_dir $plugin_dir
+        if [[ $? == 0 ]]; then
+            # rm -rf ${plugin_dir}_old
             printf "success\n"
         else
             printf "error\n"
-            clear_cache
-            exit 1
         fi
-    else
-        printf "error\n"
-        clear_cache
-        exit 1
     fi
-done < $script_dir/plugins.txt
+}
 
-if [[ $count == $total ]]; then
-    printf "updating plugins ... "
-    mv $plugin_dir ${plugin_dir}_old
-    mv $update_dir $plugin_dir
-    if [[ $? == 0 ]]; then
-        rm -rf ${plugin_dir}_old
-        printf "success\n"
-    else
-        printf "error\n"
-    fi
-fi
-
-clear_cache
+upgrade_plugins "basic"
+upgrade_plugins "extra"
