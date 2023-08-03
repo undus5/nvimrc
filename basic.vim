@@ -251,15 +251,6 @@ elseif has("linux")
     set gfn=JetBrains\ Mono\ NL\ 12
 endif
 
-" Bitstream Vera Sans Mono
-" Cascadia Code
-" DejaVu Sans Mono
-" Fira Code
-" IBM Plex Mono
-" Inconsolata
-" JetBrains Mono
-" Source Code Pro
-
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
 set guioptions-=r
 set guioptions-=R
@@ -268,14 +259,10 @@ set guioptions-=L
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Turn persistent undo on 
-"    means that you can undo even when you close a buffer/VIM
+" => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" try
-"     set undodir=~/.vim_undodir
-"     set undofile
-" catch
-" endtry
+let s:vim_runtime = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+exec 'map <leader>, :e ' . s:vim_runtime . '/vimrc<cr>'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
