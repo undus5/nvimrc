@@ -46,6 +46,9 @@ endif
 " Always show current position
 set ruler
 
+" Show vertical ruler
+set colorcolumn=80
+
 " Show line number
 set number
 
