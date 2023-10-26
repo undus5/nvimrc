@@ -45,7 +45,7 @@ let g:NERDTreeDirArrowCollapsible = '~'
 """"""""""""""""""""""""""""""
 
 set termguicolors
-set background=light
+set background=dark
 colorscheme PaperColor
 
 
