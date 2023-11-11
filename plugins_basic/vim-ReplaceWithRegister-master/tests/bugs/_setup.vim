@@ -1,1 +1,0 @@
-runtime plugin/ReplaceWithRegister.vim

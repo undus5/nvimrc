@@ -1,5 +1,0 @@
-tpope/vim-surround
-tomtom/tcomment_vim
-michaeljsmith/vim-indent-object
-inkarkat/vim-ReplaceWithRegister
-godlygeek/tabular

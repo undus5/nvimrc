@@ -52,20 +52,11 @@ clear_updates() {
 }
 
 upgrade_plugins() {
-    case $1 in
-        "basic" | "extra")
-        ;;
-        *)
-            echo "wrong arguments"
-            exit 1
-        ;;
-    esac
-
     clear_updates
     mkdir $update_dir
 
-    plugin_list=plugins_${1}.txt
-    plugin_dir=${script_dir}/plugins_${1}
+    plugin_list=plugins.txt
+    plugin_dir=${script_dir}/plugins
 
     printf "downloading and unpacking plugins ...\n"
     total=0
@@ -98,7 +89,7 @@ upgrade_plugins() {
     done < $plugin_list
 
     if [[ $count == $total ]]; then
-        printf "updating ${1} plugins ... "
+        printf "updating plugins ... "
         mv $plugin_dir ${plugin_dir}_old
         mv $update_dir $plugin_dir
         if [[ $? == 0 ]]; then
@@ -110,5 +101,4 @@ upgrade_plugins() {
     fi
 }
 
-upgrade_plugins "basic"
-upgrade_plugins "extra"
+upgrade_plugins
