@@ -99,13 +99,26 @@ autocmd FileType json setlocal ts=2 sts=2 sw=2
 " Appearence
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" don't redraw while executing macros (good performance config)
+set lazyredraw
+
 " enable syntax highlighting
 syntax enable
+
+" colorscheme
+colorscheme desert
+set background=dark
 
 " always show the status line
 set laststatus=2
 " g Ctrl-g
 set statusline=\ %F%m%r%h%w%=%y\ %{&encoding}\/%{&fileformat}\ %p%%,%c,%L\ 
+" set the window’s title, reflecting the file currently being edited
+set title
+
+" the number of screen lines to keep around the cursor
+set scrolloff=7
+set sidescrolloff=5
 
 " display command line’s tab complete options as a menu
 set wildmenu
@@ -117,15 +130,6 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
-" colorscheme
-colorscheme desert
-set background=dark
-
-" set the window’s title, reflecting the file currently being edited
-set title
-" don't redraw while executing macros (good performance config)
-set lazyredraw
-let vim_markdown_folding_disabled = 1
 " fonts
 if has("win32")
     set gfn=JetBrains\ Mono\ NL:h12
@@ -133,6 +137,9 @@ if has("win32")
 elseif has("linux")
     set gfn=JetBrains\ Mono\ NL\ 12
 endif
+
+" disable markdown folding
+let vim_markdown_folding_disabled = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,3 +185,12 @@ vmap <Leader>P "+P
 " align code
 vmap <Leader>t :!column -t -o " "<CR>
 
+" toggle dark/light
+nmap <Leader>i :call ToggleTheme()<CR>
+function ToggleTheme()
+    if &background == "dark"
+        set background=light
+    elseif &background == "light"
+        set background=dark
+    endif
+endfunction
