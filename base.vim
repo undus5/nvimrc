@@ -24,12 +24,11 @@ set fileformats=unix,dos
 set nobackup
 set nowritebackup
 set noswapfile
+" don't use Ex mode, use Q for formatting.
+nnoremap Q gq
 " enable undo dir
 "set undofile
 "set undodir=~/.vimundos
-let mapleader = "\<Space>"
-" don't use Ex mode, use Q for formatting.
-nnoremap Q gq
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -64,35 +63,6 @@ set relativenumber
 augroup toggle_relative_number
 autocmd InsertEnter * :setlocal norelativenumber
 autocmd InsertLeave * :setlocal relativenumber
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indentation
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" smart auto indentation (instead of old smartindent option)
-filetype plugin on
-filetype indent on
-" no wrap lines
-set nowrap
-" avoid wrapping a line in the middle of a word
-set linebreak
-" new lines inherit the indentation of previous lines
-set autoindent
-" use spaces instead of tabs
-set expandtab
-" indent by spaces when hitting tab
-set softtabstop=4
-" show existing tab with spaces width
-set tabstop=4
-" when indenting with ‘>’, use spaces width
-set shiftwidth=4
-
-autocmd FileType * setlocal formatoptions-=ro
-
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2
-autocmd FileType toml setlocal ts=2 sts=2 sw=2
-autocmd FileType json setlocal ts=2 sts=2 sw=2
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,7 +113,35 @@ let vim_markdown_folding_disabled = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Keymappings
+" Indentation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" smart auto indentation (instead of old smartindent option)
+filetype plugin on
+filetype indent on
+" no wrap lines
+set nowrap
+" avoid wrapping a line in the middle of a word
+set linebreak
+" new lines inherit the indentation of previous lines
+set autoindent
+autocmd FileType * setlocal formatoptions-=ro
+" use spaces instead of tabs
+set expandtab
+" indent by spaces when hitting tab
+set softtabstop=4
+" show existing tab with spaces width
+set tabstop=4
+" when indenting with ‘>’, use spaces width
+set shiftwidth=4
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2
+autocmd FileType toml setlocal ts=2 sts=2 sw=2
+autocmd FileType json setlocal ts=2 sts=2 sw=2
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Keybindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Emacs keybindings for command-line
@@ -166,13 +164,15 @@ let vim_markdown_folding_disabled = 1
 " forward one word
 :cnoremap <Esc><C-F> <S-Right>
 
-"nnoremap <Leader>w :w<CR>
-
 " buffer and cope
 map <C-l> :bnext<CR>
 map <C-h> :bprevious<CR>
 map <C-j> :cnext<CR>
 map <C-k> :cprevious<CR>
+
+" map leader key to space
+let mapleader = "\<Space>"
+"nnoremap <Leader>w :w<CR>
 
 " clipboard
 vmap <Leader>y "+y
@@ -186,7 +186,7 @@ vmap <Leader>P "+P
 vmap <Leader>t :!column -t -o " "<CR>
 
 " toggle dark/light
-nmap <Leader>i :call ToggleTheme()<CR>
+nmap <C-i> :call ToggleTheme()<CR>
 function ToggleTheme()
     if &background == "dark"
         set background=light
