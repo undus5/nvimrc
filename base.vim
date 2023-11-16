@@ -42,7 +42,6 @@ set hlsearch
 set ignorecase
 " ... unless you type a capital.
 set smartcase
-nmap <silent> <Leader>/ :nohlsearch<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,21 +169,6 @@ map <C-h> :bprevious<CR>
 map <C-j> :cnext<CR>
 map <C-k> :cprevious<CR>
 
-" map leader key to space
-let mapleader = "\<Space>"
-"nnoremap <Leader>w :w<CR>
-
-" clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
-
-" align code
-vmap <Leader>t :!column -t -o " "<CR>
-
 " toggle dark/light
 nmap <C-i> :call ToggleTheme()<CR>
 function ToggleTheme()
@@ -194,3 +178,13 @@ function ToggleTheme()
         set background=dark
     endif
 endfunction
+
+" map leader key to space
+let mapleader = "\<Space>"
+
+" clear search highlight
+nmap <silent> <Leader>/ :nohlsearch<CR>
+
+" align code
+vmap <Leader>t :!column -t -o " "<CR>
+
