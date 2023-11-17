@@ -43,6 +43,7 @@ test_command unzip
 
 script_dir=$(dirname $(realpath $0))
 update_dir=${script_dir}/updates
+plugin_list=${script_dir}/plugins.txt
 
 clear_updates() {
     if [[ -d $update_dir ]]
@@ -55,7 +56,6 @@ upgrade_plugins() {
     clear_updates
     mkdir $update_dir
 
-    plugin_list=plugins.txt
     plugin_dir=${script_dir}/plugins
 
     printf "downloading and unpacking plugins ...\n"

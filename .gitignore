@@ -1,7 +1,4 @@
-plugins/ack.vim/.netrwhist
-plugins/tlib/doc/tags
-plugins/ctrlp.vim/doc/tags*
+.netrwhist
 tags
 .DS_Store
-update
-temp_dirs/undodir/*
+plugins_old

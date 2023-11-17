@@ -1,4 +1,4 @@
 ctrlpvim/ctrlp.vim
-scrooloose/nerdtree
 mattn/emmet-vim
+scrooloose/nerdtree
 NLKNguyen/papercolor-theme
