@@ -2,3 +2,4 @@ ctrlpvim/ctrlp.vim
 mattn/emmet-vim
 scrooloose/nerdtree
 NLKNguyen/papercolor-theme
+tpope/vim-commentary
