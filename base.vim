@@ -185,6 +185,3 @@ let mapleader = "\<Space>"
 " clear search highlight
 nmap <silent> <Leader>/ :nohlsearch<CR>
 
-" align code
-vmap <Leader>t :!column -t -o " "<CR>
-
