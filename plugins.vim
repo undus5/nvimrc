@@ -43,10 +43,8 @@ let NERDTreeKeepTreeInNewTab=1
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
-if exists(":NERDTree")
 nnoremap <C-e> :NERDTreeToggle<cr>
 nnoremap <Leader>e :NERDTreeFind<cr>
-endif
 " netrw
 let g:netrw_dirhistmax=0
 
@@ -54,9 +52,7 @@ let g:netrw_dirhistmax=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabular
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if exists(":Tabularize")
 nmap <Leader>t= :Tabularize /=<CR>
 vmap <Leader>t= :Tabularize /=<CR>
 nmap <Leader>t: :Tabularize /:\zs<CR>
 vmap <Leader>t: :Tabularize /:\zs<CR>
-endif
