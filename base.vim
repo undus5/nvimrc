@@ -26,14 +26,16 @@ set nowritebackup
 set noswapfile
 " don't use Ex mode, use Q for formatting.
 nnoremap Q gq
-" enable undo dir
-"set undofile
-"set undodir=~/.vimundos
+" disable .netrwhist file
+let g:netrw_dirhistmax=0
+" don't redraw while executing macros (good performance config)
+set lazyredraw
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " find the next match as we type the search
 set incsearch
 " highlight searches by default
@@ -42,73 +44,6 @@ set hlsearch
 set ignorecase
 " ... unless you type a capital.
 set smartcase
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Cursor
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" always show cursor position
-set ruler
-" highlight cursor line and column
-set cursorline
-set cursorcolumn
-" highlight limit column
-set colorcolumn=81
-
-" reletive line number
-set number
-set relativenumber
-augroup toggle_relative_number
-autocmd InsertEnter * :setlocal norelativenumber
-autocmd InsertLeave * :setlocal relativenumber
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Appearence
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" don't redraw while executing macros (good performance config)
-set lazyredraw
-
-" enable syntax highlighting
-syntax enable
-
-" colorscheme
-colorscheme desert
-set background=dark
-
-" always show the status line
-set laststatus=2
-" g Ctrl-g
-set statusline=\ %F%m%r%h%w%=%y\ %{&encoding}\/%{&fileformat}\ %p%%,%c,%L\ 
-" set the window’s title, reflecting the file currently being edited
-set title
-
-" the number of screen lines to keep around the cursor
-set scrolloff=7
-set sidescrolloff=5
-
-" display command line’s tab complete options as a menu
-set wildmenu
-" ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
-
-" fonts
-if has("win32")
-    set gfn=JetBrains\ Mono\ NL:h12
-    set gfw=Sarasa\ Mono\ SC:h14
-elseif has("linux")
-    set gfn=JetBrains\ Mono\ NL\ 12
-endif
-
-" disable markdown folding
-let vim_markdown_folding_disabled = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -169,19 +104,87 @@ map <C-h> :bprevious<CR>
 map <C-j> :cnext<CR>
 map <C-k> :cprevious<CR>
 
-" toggle dark/light
-nmap <C-i> :call ToggleTheme()<CR>
-function ToggleTheme()
-    if &background == "dark"
-        set background=light
-    elseif &background == "light"
-        set background=dark
-    endif
-endfunction
-
 " map leader key to space
 let mapleader = "\<Space>"
 
 " clear search highlight
 nmap <silent> <Leader><CR> :nohlsearch<CR>
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Cursor
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" always show cursor position
+set ruler
+" highlight cursor line and column
+set cursorline
+set cursorcolumn
+" highlight limit column
+set colorcolumn=81
+
+" reletive line number
+set number
+set relativenumber
+augroup toggle_relative_number
+autocmd InsertEnter * :setlocal norelativenumber
+autocmd InsertLeave * :setlocal relativenumber
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Appearence
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" enable syntax highlighting
+syntax enable
+
+" always show the status line
+set laststatus=2
+" g Ctrl-g
+set statusline=\ %F%m%r%h%w%=%y\ %{&encoding}\/%{&fileformat}\ %p%%,%c,%L\ 
+" set the window’s title, reflecting the file currently being edited
+set title
+
+" the number of screen lines to keep around the cursor
+set scrolloff=7
+set sidescrolloff=5
+
+" display command line’s tab complete options as a menu
+set wildmenu
+" ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+    set wildignore=*\node_modules\*,*\vendor\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+    set wildignore=*/node_modules/*,*/vendor/*
+endif
+
+" fonts
+if has("win32")
+    set gfn=JetBrains\ Mono\ NL:h12
+    set gfw=Sarasa\ Mono\ SC:h14
+elseif has("linux")
+    set gfn=JetBrains\ Mono\ NL\ 12
+endif
+
+" disable markdown folding
+let vim_markdown_folding_disabled = 1
+
+" built-in colorschemes which support both light & dark modes:
+" quiet lunaperche retrobox wildcharm
+set background=dark
+colorscheme quiet
+
+" toggle dark/light
+nmap <C-i> :call ToggleTheme()<CR>
+function ToggleTheme()
+    if &background == "dark"
+        set background=light
+        echo " light mode"
+    elseif &background == "light"
+        set background=dark
+        echo " dark mode"
+    endif
+endfunction

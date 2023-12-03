@@ -6,4 +6,4 @@ endif
 
 exe 'set runtimepath+=' . s:vimrcs
 exe 'source ' . s:vimrcs . '/base.vim'
-exe 'source ' . s:vimrcs . '/plugins.vim'
+exe 'source ' . s:vimrcs . '/addons.vim'

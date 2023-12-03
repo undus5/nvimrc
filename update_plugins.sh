@@ -43,7 +43,7 @@ test_command unzip
 
 script_dir=$(dirname $(realpath $0))
 update_dir=${script_dir}/updates
-plugin_list=${script_dir}/plugins.txt
+plugin_list=${script_dir}/update_list.txt
 
 clear_updates() {
     if [[ -d $update_dir ]]
