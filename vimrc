@@ -1,9 +1,9 @@
 if has('win32')
-    let s:vimrcs = '~/.vimrcs'
+    let s:vim_runtime = '~/.vim_runtime'
 else
-    let s:vimrcs = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+    let s:vim_runtime = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 endif
 
-exe 'set runtimepath+=' . s:vimrcs
-exe 'source ' . s:vimrcs . '/base.vim'
-exe 'source ' . s:vimrcs . '/addons.vim'
+execute 'set runtimepath+=' . s:vim_runtime
+execute 'source ' . s:vim_runtime . '/base.vim'
+execute 'source ' . s:vim_runtime . '/plugins.vim'

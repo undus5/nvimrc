@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let s:vim_runtime = expand('<sfile>:p:h')."/"
 try
-call pathogen#infect(s:vim_runtime.'/plugins/{}')
+call pathogen#infect(s:vim_runtime.'/addons/plugins/{}')
 call pathogen#helptags()
 catch
 endtry

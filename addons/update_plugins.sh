@@ -41,9 +41,15 @@ lstrip() {
 
 test_command unzip
 
-script_dir=$(dirname $(realpath $0))
+script_dir=$(dirname $(reallink -f ${BASH_SOURCE[0]}))
+plugin_dir=${script_dir}/plugins
 update_dir=${script_dir}/updates
 plugin_list=${script_dir}/update_list.txt
+
+if [[ ! -d $plugin_dir ]]
+then
+    mkdir $plugin_dir
+fi
 
 clear_updates() {
     if [[ -d $update_dir ]]
@@ -55,8 +61,6 @@ clear_updates() {
 upgrade_plugins() {
     clear_updates
     mkdir $update_dir
-
-    plugin_dir=${script_dir}/plugins
 
     printf "downloading and unpacking plugins ...\n"
     total=0

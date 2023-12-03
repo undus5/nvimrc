@@ -172,19 +172,34 @@ endif
 " disable markdown folding
 let vim_markdown_folding_disabled = 1
 
-" built-in colorschemes which support both light & dark modes:
-" quiet lunaperche retrobox wildcharm
 set background=dark
-colorscheme quiet
-
 " toggle dark/light
-nmap <C-i> :call ToggleTheme()<CR>
-function ToggleTheme()
+nmap <C-i> :call ToggleDarkLight()<CR>
+function ToggleDarkLight()
     if &background == "dark"
         set background=light
-        echo " light mode"
-    elseif &background == "light"
+    else
         set background=dark
-        echo " dark mode"
+    endif
+endfunction
+
+" built-in colors which support both light && dark modes:
+" vim & nvim : quiet lunaperche
+" vim        : retrobox wildcharm
+colorscheme quiet
+
+" toggle monochrom/colorful
+nmap <C-a> :call ToggleColorful()<CR>
+let s:lastcolor = "lunaperche"
+function ToggleColorful()
+    if exists("g:colors_name")
+        if g:colors_name != "quiet"
+            let s:lastcolor = g:colors_name
+            colorscheme quiet
+        else
+            execute "colorscheme " . s:lastcolor
+        endif
+    else
+        colorscheme quiet
     endif
 endfunction
