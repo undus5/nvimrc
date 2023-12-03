@@ -44,7 +44,7 @@ let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
 nnoremap <C-e> :NERDTreeToggle<cr>
-nnoremap <Leader>e :NERDTreeFind<cr>
+nnoremap <Leader>l :NERDTreeFind<cr>
 " netrw
 let g:netrw_dirhistmax=0
 

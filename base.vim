@@ -183,5 +183,5 @@ endfunction
 let mapleader = "\<Space>"
 
 " clear search highlight
-nmap <silent> <Leader>/ :nohlsearch<CR>
+nmap <silent> <Leader><CR> :nohlsearch<CR>
 
