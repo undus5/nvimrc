@@ -30,6 +30,8 @@ nnoremap Q gq
 let g:netrw_dirhistmax=0
 " don't redraw while executing macros (good performance config)
 set lazyredraw
+" map leader key to space
+let mapleader = "\<Space>"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -58,6 +60,9 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
     set wildignore=*/node_modules/*,*/vendor/*
 endif
+
+" clear search highlight
+nmap <silent> <Leader><CR> :nohlsearch<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -118,12 +123,6 @@ map <C-h> :bprevious<CR>
 map <C-j> :cnext<CR>
 map <C-k> :cprevious<CR>
 
-" map leader key to space
-let mapleader = "\<Space>"
-
-" clear search highlight
-nmap <silent> <Leader><CR> :nohlsearch<CR>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cursor
@@ -176,7 +175,7 @@ let vim_markdown_folding_disabled = 1
 
 set background=dark
 " toggle dark/light
-nmap <C-i> :call ToggleDarkLight()<CR>
+nmap <C-a> :call ToggleDarkLight()<CR>
 function ToggleDarkLight()
     if &background == "dark"
         set background=light
@@ -191,7 +190,7 @@ endfunction
 colorscheme quiet
 
 " toggle monochrom/colorful
-nmap <C-a> :call ToggleColorful()<CR>
+nmap <C-m> :call ToggleColorful()<CR>
 let s:lastcolor = "lunaperche"
 function ToggleColorful()
     if exists("g:colors_name")
