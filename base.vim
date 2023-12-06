@@ -45,6 +45,20 @@ set ignorecase
 " ... unless you type a capital.
 set smartcase
 
+" display command line’s tab complete options as a menu
+set wildmenu
+" add current working dir and it's subdirs to PATH
+set path+=**
+" ignore compiled files
+set wildignore=*.o,*~,*.pyc,*.class
+if has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+    set wildignore=node_modules\*,vendor\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+    set wildignore=*/node_modules/*,*/vendor/*
+endif
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indentation
@@ -148,18 +162,6 @@ set title
 " the number of screen lines to keep around the cursor
 set scrolloff=7
 set sidescrolloff=5
-
-" display command line’s tab complete options as a menu
-set wildmenu
-" ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-    set wildignore=*\node_modules\*,*\vendor\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-    set wildignore=*/node_modules/*,*/vendor/*
-endif
 
 " fonts
 if has("win32")
