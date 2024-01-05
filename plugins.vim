@@ -8,26 +8,27 @@ call pathogen#helptags()
 catch
 endtry
 
-if exists(":Tabularize")
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
+nmap <Leader>== :Tabularize /=<CR>
+vmap <Leader>== :Tabularize /=<CR>
+nmap <Leader>;; :Tabularize /:\zs<CR>
+vmap <Leader>;; :Tabularize /:\zs<CR>
 
-" toggle monochrom/colorful
-nmap <C-m> :call ToggleColorful()<CR>
+" toggle monochrome/colorful
+nmap <Leader>h :call ToggleColorful()<CR>
 
-let s:lastcolor = "PaperColor"
+let s:colorful_color   = "PaperColor"
+let s:monochrome_color = "quiet"
+let s:lastcolor        = s:colorful_color
+
 function ToggleColorful()
 if exists("g:colors_name")
-    if g:colors_name != "quiet"
+    if g:colors_name == s:colorful_color
         let s:lastcolor = g:colors_name
-        call SetColorScheme("quiet")
+        call SetColorScheme(s:monochrome_color)
     else
         call SetColorScheme(s:lastcolor)
     endif
 else
-    call SetColorScheme("quiet")
+    call SetColorScheme(s:monochrome_color)
 endif
 endfunction

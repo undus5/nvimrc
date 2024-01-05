@@ -175,7 +175,7 @@ let vim_markdown_folding_disabled = 1
 
 set background=dark
 " toggle dark/light
-nmap <C-a> :call ToggleDarkLight()<CR>
+nmap <Leader>i :call ToggleDarkLight()<CR>
 function ToggleDarkLight()
     if &background == "dark"
         set background=light
