@@ -187,20 +187,12 @@ endfunction
 " built-in colors which support both light && dark modes:
 " vim & nvim : quiet lunaperche
 " vim        : retrobox wildcharm
-colorscheme quiet
-
-" toggle monochrom/colorful
-nmap <C-m> :call ToggleColorful()<CR>
-let s:lastcolor = "lunaperche"
-function ToggleColorful()
-    if exists("g:colors_name")
-        if g:colors_name != "quiet"
-            let s:lastcolor = g:colors_name
-            colorscheme quiet
-        else
-            execute "colorscheme " . s:lastcolor
-        endif
-    else
-        colorscheme quiet
-    endif
+function SetColorScheme(name)
+    try
+        execute "colorscheme " . a:name
+    catch
+        colorscheme desert
+    endtry
 endfunction
+
+call SetColorScheme("quiet")
