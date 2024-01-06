@@ -148,13 +148,10 @@ autocmd InsertLeave * :setlocal relativenumber
 " Appearence
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" enable syntax highlighting
-syntax enable
-
 " always show the status line
 set laststatus=2
 " g Ctrl-g
-set statusline=\ %F%m%r%h%w%=%y\ %{&encoding}\/%{&fileformat}\ %p%%,%c,%L\ 
+set statusline=\ %F%m%r%h%w%=%y\ %{&encoding}\/%{&fileformat}\ %c,%p%%\/%L\ 
 " set the window’s title, reflecting the file currently being edited
 set title
 
@@ -173,7 +170,13 @@ endif
 " disable markdown folding
 let vim_markdown_folding_disabled = 1
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colorscheme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set background=dark
+
 " toggle dark/light
 nmap <Leader>i :call ToggleDarkLight()<CR>
 function ToggleDarkLight()
@@ -184,6 +187,9 @@ function ToggleDarkLight()
     endif
 endfunction
 
+" enable syntax highlighting
+syntax on
+
 " built-in colors which support both light && dark modes:
 " vim & nvim : quiet lunaperche
 " vim        : retrobox wildcharm
@@ -191,7 +197,7 @@ function SetColorScheme(name)
     try
         execute "colorscheme " . a:name
     catch
-        colorscheme desert
+        syntax off
     endtry
 endfunction
 
