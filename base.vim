@@ -151,7 +151,7 @@ autocmd InsertLeave * :setlocal relativenumber
 " always show the status line
 set laststatus=2
 " g Ctrl-g
-set statusline=\ %F%m%r%h%w%=%y\ %{&encoding}\/%{&fileformat}\ %c,%p%%\/%L\ 
+set statusline=\ %F%m%r%h%w%=[%c]\ [%p%%\/%L]\ [%{&encoding}\/%{&fileformat}]\ %y\ 
 " set the window’s title, reflecting the file currently being edited
 set title
 
@@ -196,6 +196,7 @@ syntax on
 function SetColorScheme(name)
     try
         execute "colorscheme " . a:name
+        syntax on
     catch
         syntax off
     endtry
