@@ -175,6 +175,9 @@ let vim_markdown_folding_disabled = 1
 " colorscheme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" enable syntax highlighting
+syntax on
+
 set background=dark
 
 " toggle dark/light
@@ -187,12 +190,10 @@ function ToggleDarkLight()
     endif
 endfunction
 
-" enable syntax highlighting
-syntax on
-
 " built-in colors which support both light && dark modes:
 " vim & nvim : quiet lunaperche
 " vim        : retrobox wildcharm
+" set colorscheme or turn off syntax highlighting
 function SetColorScheme(name)
     try
         execute "colorscheme " . a:name
