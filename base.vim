@@ -26,8 +26,6 @@ set nowritebackup
 set noswapfile
 " don't use Ex mode, use Q for formatting.
 nnoremap Q gq
-" disable .netrwhist file
-let g:netrw_dirhistmax=0
 " don't redraw while executing macros (good performance config)
 set lazyredraw
 " map leader key to space
@@ -142,6 +140,16 @@ set relativenumber
 augroup toggle_relative_number
 autocmd InsertEnter * :setlocal norelativenumber
 autocmd InsertLeave * :setlocal relativenumber
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" netrw
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" disable .netrwhist file
+let g:netrw_dirhistmax=0
+" autoclose netrw buffer
+let g:netrw_fastbrowse = 0
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
