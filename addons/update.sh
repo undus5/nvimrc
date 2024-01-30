@@ -44,7 +44,7 @@ test_command unzip
 script_dir=$(dirname $(reallink -f ${BASH_SOURCE[0]}))
 plugin_dir=${script_dir}/plugins
 update_dir=${script_dir}/updates
-plugin_list=${script_dir}/update_list.txt
+plugin_list=${script_dir}/plugins.txt
 
 if [[ ! -d $plugin_dir ]]
 then

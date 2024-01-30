@@ -4,6 +4,7 @@
 let s:vim_runtime = expand('<sfile>:p:h')."/"
 try
 call pathogen#infect(s:vim_runtime.'/addons/plugins/{}')
+call pathogen#infect(s:vim_runtime.'/addons/forks/{}')
 call pathogen#helptags()
 catch
 endtry
@@ -32,11 +33,3 @@ else
 endif
 endfunction
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tabular
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <Leader>== :Tabularize /=<CR>
-vmap <Leader>== :Tabularize /=<CR>
-nmap <Leader>;; :Tabularize /:\zs<CR>
-vmap <Leader>;; :Tabularize /:\zs<CR>
