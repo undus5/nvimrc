@@ -6,12 +6,7 @@
 
 ```
 git clone https://github.com/undus5/vimrc.git ~/.vim_runtime
-
-# for vim
-ln -sf ~/.vim_runtime/vimrc ~/.vimrc
-
-# for neovim
-ln -sf ~/.vim_runtime/vimrc ~/.config/nvim/init.vim
+~/.vim_runtime/install.sh
 ```
 
 or basic version only:
