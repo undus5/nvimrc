@@ -6,13 +6,13 @@ dvimrc=~/.vimrc
 nvimconfd=~/.config/nvim
 rootconfd=/root/.config
 
-ln -sf $svimrc $dvimrc
-mkdir -p $nvimconfd
-ln -sf $svimrc $nvimconfd/init.vim
-
-if [[ $1 == "sudo" ]]; then
+if [[ ${EUID} != 0 ]]; then
     sudo ln -sf $dvimrc /root
     sudo mkdir -p $rootconfd
     sudo ln -sf $nvimconfd $rootconfd
+else
+    ln -sf $svimrc $dvimrc
+    mkdir -p $nvimconfd
+    ln -sf $svimrc $nvimconfd/init.vim
 fi
 
