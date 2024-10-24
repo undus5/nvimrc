@@ -186,7 +186,12 @@ let vim_markdown_folding_disabled = 1
 " enable syntax highlighting
 syntax on
 
-set background=dark
+if $VIMBG == "light"
+    set background=light
+else
+    set background=dark
+endif
+
 
 " toggle dark/light
 nmap <Leader>i :call ToggleDarkLight()<CR>
