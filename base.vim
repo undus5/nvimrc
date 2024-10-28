@@ -53,10 +53,12 @@ set path+=**
 set wildignore=*.o,*~,*.pyc,*.class
 if has("win32")
     set wildignore+=.git\*,.hg\*,.svn\*
-    set wildignore=node_modules\*,vendor\*
+    set wildignore+=node_modules\*,vendor\*
+    set wildignore+=public\*
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-    set wildignore=*/node_modules/*,*/vendor/*
+    set wildignore+=*/node_modules/*,*/vendor/*
+    set wildignore+=*/public/*
 endif
 
 " clear search highlight
