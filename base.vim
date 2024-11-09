@@ -161,7 +161,7 @@ let g:netrw_fastbrowse = 0
 " always show the status line
 set laststatus=2
 " g Ctrl-g
-set statusline=\ %F%m%r%h%w%=[%c]\ [%p%%\/%L]\ [%{&encoding}\/%{&fileformat}]\ %y\ 
+set statusline=\ %F%m%r%h%w%=[%p%%\/%L]\ [%{&encoding}\/%{&fileformat}]\ %y\ 
 " set the window’s title, reflecting the file currently being edited
 set title
 
