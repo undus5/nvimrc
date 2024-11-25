@@ -97,6 +97,10 @@ autocmd FileType json setlocal ts=2 sts=2 sw=2
 " Keybindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Copy & Paste
+:noremap <Leader>c "+y
+:noremap <Leader>v "+p
+
 " Emacs keybindings for command-line
 " start of line
 :cnoremap <C-A>  <Home>
