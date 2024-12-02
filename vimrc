@@ -1,5 +1,5 @@
 if has('win32')
-    let s:vim_runtime = '~/.vim_runtime'
+    let s:vim_runtime = '~/.vimrcs'
 else
     let s:vim_runtime = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 endif

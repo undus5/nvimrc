@@ -5,23 +5,23 @@
 ### Linux
 
 ```
-git clone https://github.com/undus5/vimrc.git ~/.vim_runtime
-~/.vim_runtime/install.sh
+git clone https://github.com/undus5/vimrcs.git ~/.vimrcs
+~/.vimrcs/install.sh
 ```
 
 or basic version only:
 
 ```
-curl -fsSL https://github.com/undus5/vimrc/raw/main/base.vim -o ~/.vimrc
+curl -L https://github.com/undus5/vimrcs/raw/main/base.vim -o ~/.vimrc
 ```
 
 ### Windows
 
 ```
-# destination path must be ~/.vim_runtime (hard coded)
-git clone https://github.com/undus5/vimrc.git ~/.vim_runtime
+# destination path must be ~/.vimrcs (hard coded)
+git clone https://github.com/undus5/vimrcs.git ~/.vimrcs
 
-# copy ~/.vim_runtime/vimrc to:
+# copy ~/.vimrcs/vimrc to:
 
 # for vim
 ~/_vimrc
@@ -29,3 +29,4 @@ git clone https://github.com/undus5/vimrc.git ~/.vim_runtime
 # for neovim
 ~/AppData/Local/nvim/init.vim
 ```
+
