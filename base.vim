@@ -18,7 +18,7 @@ set t_vb=
 set mouse=a
 " encoding
 set encoding=utf-8
-set fileencodings=utf-8,gb18030
+set fileencodings=ucs-bom,utf-16le,utf-8,gb18030,default,latin1
 set fileformats=unix,dos
 " disable backup and swap
 set nobackup
