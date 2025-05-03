@@ -1,29 +1,22 @@
-# vimrc
+# nvimrc
 
-## Installation
+## Usage
 
-### Linux
-
-```
-curl -LO https://github.com/undus5/vimrcs/archive/refs/heads/main.tar.gz
-tar xf vimrcs-main.tar.gz
-mv vimrcs-main ~/.vimrcs
-~/.vimrcs/install.sh
-```
-
-or basic version only:
+neovim:
 
 ```
-curl -L https://github.com/undus5/vimrcs/raw/main/base.vim -o ~/.vimrc
+$ git clone https://github.com/undus5/nvimrc.git ~/.config/nvim
 ```
 
-### Windows
+vim basic:
 
-1, download https://github.com/undus5/vimrcs/archive/refs/heads/main.tar.gz
+```
+$ curl -L https://github.com/undus5/vimrcs/raw/main/vimrc -o ~/.vimrc
+```
 
-2, extract to `"~\_vimrcs"` (hard coded path)
+## Dependencies
 
-3, copy `"~\_vimrcs\vimrc"` to `"~\_vimrc"` and `"~/AppData/Local/nvim/init.vim"`
+plugin manager: [tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)
 
-`"~"` means `"C:\Users\<UserName>"` under windows.
+file explorer: [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
 

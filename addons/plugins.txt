@@ -1,3 +1,0 @@
-mattn/emmet-vim
-NLKNguyen/papercolor-theme
-tpope/vim-commentary
