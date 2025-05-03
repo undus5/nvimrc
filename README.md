@@ -11,7 +11,7 @@ $ git clone https://github.com/undus5/nvimrc.git ~/.config/nvim
 vim basic:
 
 ```
-$ curl -L https://github.com/undus5/vimrcs/raw/main/vimrc -o ~/.vimrc
+$ curl -L https://github.com/undus5/nvimrc/raw/main/vimrc -o ~/.vimrc
 ```
 
 ## Dependencies
