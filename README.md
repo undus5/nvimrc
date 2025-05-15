@@ -14,14 +14,19 @@ vim basic:
 $ curl -L https://github.com/undus5/nvimrc/raw/main/vimrc -o ~/.vimrc
 ```
 
-## Dependencies
+## Plugins
 
-plugin manager: [tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)
+[tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)
+plugin manager
 
-file explorer: [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
+[stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
+file explorer
 
-fuzzy finder:
 [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 (deps: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim),
 [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep))
+fuzzy finder
+
+[emmet-vim](https://github.com/mattn/emmet-vim)
+html & css helper
 
