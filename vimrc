@@ -138,10 +138,6 @@ set colorcolumn=81
 
 " reletive line number
 set number
-set relativenumber
-augroup toggle_relative_number
-autocmd InsertEnter * :setlocal norelativenumber
-autocmd InsertLeave * :setlocal relativenumber
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
