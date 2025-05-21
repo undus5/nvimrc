@@ -88,9 +88,9 @@ set tabstop=4
 " when indenting with ‘>’, use spaces width
 set shiftwidth=4
 
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2
-autocmd FileType toml setlocal ts=2 sts=2 sw=2
-autocmd FileType json setlocal ts=2 sts=2 sw=2
+"autocmd FileType yaml setlocal ts=2 sts=2 sw=2
+"autocmd FileType toml setlocal ts=2 sts=2 sw=2
+"autocmd FileType json setlocal ts=2 sts=2 sw=2
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
