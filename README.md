@@ -30,3 +30,6 @@ fuzzy finder
 [emmet-vim](https://github.com/mattn/emmet-vim)
 html & css helper
 
+[Mofiqul/vscode.nvim](https://github.com/Mofiqul/vscode.nvim)
+colorscheme
+

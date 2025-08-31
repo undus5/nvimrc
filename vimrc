@@ -176,29 +176,26 @@ endif
 " disable markdown folding
 let vim_markdown_folding_disabled = 1
 
+" enable syntax highlighting
+syntax on
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" enable syntax highlighting
-syntax on
-
-if $VIMBG == "light"
-    set background=light
-else
-    set background=dark
-endif
-
 " built-in colors which support both light && dark modes:
 " vim & nvim : quiet lunaperche
 " vim        : retrobox wildcharm
 " set colorscheme or turn off syntax highlighting
-try
-    colorscheme quiet
-catch
-    syntax off
-endtry
+
+"set background=dark
+
+"try
+"    colorscheme quiet
+"catch
+"    syntax off
+"endtry
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable Plugins
